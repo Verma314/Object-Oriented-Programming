@@ -1,0 +1,15 @@
+info: things to check out
+
+executorService vs executor --> 
+
+futures --> hold values when from threads returing values  (callable)
+
+completion service -->
+
+bounded queue --> will BLOCK if you try to over-extract from it.
+
+semaphores --> restriction on the number of threads that are availale
+
+locks --> can allow concurrent reads, but blocks concurrent writes, example ConcurrentHashMaps
+
+atomic integers --> 
