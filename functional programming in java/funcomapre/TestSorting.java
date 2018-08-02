@@ -21,26 +21,23 @@ public class TestSorting {
 
 
         displayLists(employeeList);
-/*
-        for ( Employee e : employeeList ) {
-            System.out.print( e.lastName+ " ");
-        }
-*/
-
         System.out.println();
-/*        Collections.sort(employeeList,new Comparator<Employee>() {
-            @Override
-            public int compare(Employee s1, Employee s2) {
-                return s1.getLastName().compareToIgnoreCase(s2.getLastName());
-            }
-        });*/
-
         Collections.sort(employeeList, (e01,e02) -> e01.getLastName().compareTo(e02.lastName));
-
         displayLists(employeeList);
-/*        for ( Employee e : employeeList ) {
-            System.out.print( e.lastName + " ");
-        }*/
+        //do conditions, similar to filter-ish
+        printConditionally(employeeList, (e) -> e.getLastName().startsWith("z")); //print last names starting with z
+
 
     }
+
+    public static void printConditionally(List<Employee> employees, Condition condition){
+        for(Employee e: employees){
+            if(condition.test(e)){
+                System.out.println("\nsatisifying condition " + e.getLastName());
+            }
+
+        }
+    }
+
+
 }
